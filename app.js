@@ -34,7 +34,7 @@ let searchUser = (obj)=>{
     
 }
 
-var whitelist = ['http://localhost:3000']
+//var whitelist = ['http://localhost:3000']
 var corsOptions = {
   origin: 'http://example.com',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -74,18 +74,10 @@ var corsOptions = {
   
 // });
 
-app.use(function(req, res, next) {
- 
-       res.setHeader('Access-Control-Allow-Origin', 'https://jwt-cors-on-node.herokuapp.com');
-      
-       next();
- 
-  
-});
-
+app.use(cors(corsOptions))
 
 app.get("/",(req,res)=>{
-  res.send(" /login  and   /verifyToken")
+  res.send("APIs :    /login  and   /verifyToken")
 })
 
 
