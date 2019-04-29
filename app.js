@@ -74,9 +74,9 @@ var corsOptions = {
   
 // });
 
-app.use(cors(corsOptions))
+//app.use(cors(corsOptions))
 
-app.get("/",(req,res)=>{
+app.get("/",cors(corsOptions),(req,res)=>{
   res.send("APIs :    /login  and   /verifyToken")
 })
 
