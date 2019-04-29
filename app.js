@@ -52,26 +52,27 @@ var corsOptions = {
 // }
 
 //app.use(cors(corsOptions))
-app.use(function(req, res, next) {
-  var allowedOrigins = ['127.0.0.1:3000', 'localhost:3000','jwt-cors-on-node.herokuapp.com'];
-  var origin = req.headers.host;
-  console.log(req.url)
-  console.log(allowedOrigins.indexOf(origin))
-  if(allowedOrigins.indexOf(origin) > -1){
-       res.setHeader('Access-Control-Allow-Origin', origin);
-       res.header('Access-Control-Allow-Methods', 'GET,POST, OPTIONS');
-        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        res.header('Access-Control-Allow-Credentials', true);
-        return next();
-  }
-  else
-    res.send("CORS Not allowing this origin")
+
+
+
+// app.use(function(req, res, next) {
+//   var allowedOrigins = ['http://127.0.0.1:3000', 'http://localhost:3000','https://jwt-cors-on-node.herokuapp.com'];
+//   //var origin = req.headers.host;
+//   var origin = req.headers.origin;
+//   console.log(origin)
+//   console.log(allowedOrigins.indexOf(origin))
+//   if(allowedOrigins.indexOf(origin) > -1){
+//        res.setHeader('Access-Control-Allow-Origin', origin);
+//        res.header('Access-Control-Allow-Methods', 'GET,POST, OPTIONS');
+//         res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//         res.header('Access-Control-Allow-Credentials', true);
+//         return next();
+//   }
+//   else
+//     res.send("CORS Not allowing this origin")
  
   
-});
-// app.get('/products/:id',cors(corsOptions), function (req, res, next) {
-//     res.json({msg: 'This is CORS-enabled for all origins!'})
-//   })
+// });
 
 
 
