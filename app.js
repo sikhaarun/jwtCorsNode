@@ -77,17 +77,15 @@ var corsOptions = {
 app.use(function(req, res, next) {
  
        res.setHeader('Access-Control-Allow-Origin', 'https://jwt-cors-on-node.herokuapp.com');
-       res.header('Access-Control-Allow-Methods', 'GET,POST, OPTIONS');
-        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        res.header('Access-Control-Allow-Credentials', true);
-        return next();
+      
+       next();
  
   
 });
 
 
 app.get("/",(req,res)=>{
-  res.send("login :  /login \n verify : /verifyToken")
+  res.send(" /login  and   /verifyToken")
 })
 
 
