@@ -53,7 +53,7 @@ var corsOptions = {
 
 //app.use(cors(corsOptions))
 app.use(function(req, res, next) {
-  var allowedOrigins = ['http://127.0.0.1:3000', 'http://localhost:3000'];
+  var allowedOrigins = ['http://127.0.0.1:3000', 'http://localhost:3000','https://jwt-cors-on-node.herokuapp.com'];
   var origin = req.headers.origin;
   console.log(allowedOrigins.indexOf(origin))
   if(allowedOrigins.indexOf(origin) > -1){
